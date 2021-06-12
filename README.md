@@ -7,6 +7,8 @@ If you run this plugin with your system log turned on the "Thorough" or "Debug" 
 This setting may be found under the following location: 
 System > System Settings > System Logs > System Log 
 
+As of 6/12/2021 the main branch contains fixes from the community exchange and to get messages to show up in 20.X.
+
 Enhancements being considered:
 User selected message background colors.
 Using system default messages instead of current method.
