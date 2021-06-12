@@ -58,7 +58,7 @@ var notifier = {
     var i = 0,
       l = notifier.notifications.length;
     if (l > 0) {
-      $j('#content-main').before('<div id="notification-alert">' + notifier.notifications[i].message + '</div>');
+      $j('#content-main').prepend('<div id="notification-alert">' + notifier.notifications[i].message + '</div>');
       if (l > 1) {
         setInterval(function () {
           if (i < (l - 1)) {
