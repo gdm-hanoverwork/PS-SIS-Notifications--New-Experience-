@@ -58,7 +58,7 @@ var notifier = {
     var i = 0,
       l = notifier.notifications.length;
     if (l > 0) {
-      $j('#usercontext-bar').before('<div id="notification-alert">' + notifier.notifications[i].message + '</div>');
+      $j('#content-main').before('<div id="notification-alert">' + notifier.notifications[i].message + '</div>');
       if (l > 1) {
         setInterval(function () {
           if (i < (l - 1)) {
