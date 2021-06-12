@@ -55,20 +55,24 @@ var notifier = {
    * Loads the messages into a div above the notification bar
    */
   loadMessages: function () {
-    var i = 0,
-      l = notifier.notifications.length;
-    if (l > 0) {
-      $j('#content-main').prepend('<div id="notification-alert">' + notifier.notifications[i].message + '</div>');
-      if (l > 1) {
-        setInterval(function () {
-          if (i < (l - 1)) {
-            i++;
-          } else {
-            i = 0;
-          }
-          $j('#notification-alert').text(notifier.notifications[i].message);
-        }, notifier.interval);
-      }
+    var pageURL = $j(location).attr('href');
+    if (pageURL.includes('customization/home.html')) {
+    } else {  
+	    var i = 0,
+	    l = notifier.notifications.length;
+		if (l > 0) {
+			$j('#content-main').prepend('<div id="notification-alert" class="feedback-info">' + notifier.notifications[i].message + '</div>');
+			if (l > 1) {
+				setInterval(function () {
+					if (i < (l - 1)) {
+						i++;
+					} else {
+						i = 0;
+					}
+				    $j('#notification-alert').text(notifier.notifications[i].message);
+				}, notifier.interval);
+			}
+		}
     }
   },
 

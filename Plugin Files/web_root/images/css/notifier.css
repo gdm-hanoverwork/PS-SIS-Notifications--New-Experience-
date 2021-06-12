@@ -1,3 +1,4 @@
+/* No longer need to use CSS for the alerts, using built in feedback options 
 #notification-alert {
   width: 100%;
   background-color: #f00;
@@ -5,6 +6,7 @@
   font-weight: 700;
   text-align: center;
 }
+*/
 
 .yes_no {
   width: 40pt;
