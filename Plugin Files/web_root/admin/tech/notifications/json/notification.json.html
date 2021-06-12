@@ -12,7 +12,7 @@
     FROM U_NOTIFICATIONS n
     WHERE n.id = ~[gpv:id]
     ]
-    "message": "~(n.message;js)",
+    "message": "~(n.message;json)",
     "admin_portal": "~(n.admin_portal)",
     "teacher_portal": "~(n.teacher_portal)",
     "public_portal": "~(n.public_portal)",
