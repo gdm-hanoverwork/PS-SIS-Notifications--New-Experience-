@@ -1,0 +1,11 @@
+<script>
+  $j('tr').removeAttr('class');
+  $j('table').prop('class', 'linkDescList');
+  $j('a[href*="pageanddatamanagement.html"]').closest('tr').before('<tr>' +
+      '<td>' +
+      '<a href="/admin/tech/notifications/list.html">' + ~[text:psx.htmlc.admin_tech.home.notifications_label] +
+      '</a>' +
+      '</td>' +
+      '<td>' + ~[text:psx.htmlc.admin_tech.home.notifications_desc] + '</td>' +
+      '</tr>');
+</script>

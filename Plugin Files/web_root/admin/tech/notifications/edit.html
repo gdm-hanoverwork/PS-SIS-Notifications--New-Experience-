@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html>
+<head>
+  <title>~[text:psx.htmlc.admin_tech_notifications.edit.edit_notification]</title>
+  ~[wc:commonscripts]
+  <link href="/images/css/screen.css" rel="stylesheet" media="screen">
+  <link href="/images/css/print.css" rel="stylesheet" media="print">
+</head>
+<body>
+  <form action="list.html" method="POST" id="notification">
+    ~[wc:admin_header_css]
+    <a href="/admin/home.html" target="_top">~[text:psx.htmlc.admin_tech_notifications.edit.start_page]</a> &gt;
+    <a href="/admin/tech/home.html">~[text:psx.htmlc.admin_tech_notifications.edit.system_administrator]</a> &gt; ~[text:psx.htmlc.admin_tech_notifications.edit.notification_setup]
+    ~[wc:admin_navigation_css]
+    <h1>~[text:psx.htmlc.admin_tech_notifications.edit.edit_notification]</h1>
+    <div class="box-round">
+      <table class="linkDescList">
+        <thead>
+          <tr>
+            <th>~[text:psx.htmlc.admin_tech_notifications.edit.option]</th>
+            <th>~[text:psx.htmlc.admin_tech_notifications.edit.value]</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <label for="message" class="required">~[text:psx.htmlc.admin_tech_notifications.edit.message]</label>
+            </td>
+            <td>
+              <textarea name="CF-[:0.U_NOTIFICATIONS.U_NOTIFICATIONS:~[gpv:id;-1]]MESSAGE" id="message" rows="4" cols="100" maxlength="400"></textarea>
+              <div id="messageError"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="portals">~[text:psx.htmlc.admin_tech_notifications.edit.portals]</label>
+            </td>
+            <td>
+              <fieldset id="portals">
+                <input type="checkbox" name="CF-[:0.U_NOTIFICATIONS.U_NOTIFICATIONS:~[gpv:id;-1]]admin_portal" id="admin_portal">
+                <label for="admin_portal">~[text:psx.htmlc.admin_tech_notifications.edit.admin]</label>
+                <input type="checkbox" name="CF-[:0.U_NOTIFICATIONS.U_NOTIFICATIONS:~[gpv:id;-1]]teacher_portal" id="teacher_portal">
+                <label for="teacher_portal">~[text:psx.htmlc.admin_tech_notifications.edit.teachers]</label>
+                <input type="checkbox" name="CF-[:0.U_NOTIFICATIONS.U_NOTIFICATIONS:~[gpv:id;-1]]public_portal" id="public_portal">
+                <label for="public_portal">~[text:psx.htmlc.admin_tech_notifications.edit.public]</label>
+                <input type="checkbox" name="CF-[:0.U_NOTIFICATIONS.U_NOTIFICATIONS:~[gpv:id;-1]]sub_portal" id="sub_portal">
+                <label for="sub_portal">~[text:psx.htmlc.admin_tech_notifications.edit.subs]</label>
+              </fieldset>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="startdate">~[text:psx.htmlc.admin_tech_notifications.edit.show_notification]</label>
+            </td>
+            <td>
+              <input class="psDateWidget" id="startdate" name="CF-[:0.U_NOTIFICATIONS.U_NOTIFICATIONS:~[gpv:id;-1]]start_date">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="enddate">~[text:psx.htmlc.admin_tech_notifications.edit.hide_notification]</label>
+            </td>
+            <td>
+              <input class="psDateWidget" id="enddate" name="CF-[:0.U_NOTIFICATIONS.U_NOTIFICATIONS:~[gpv:id;-1]]end_date">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="schools">~[text:psx.htmlc.admin_tech_notifications.edit.schools]</label>
+            </td>
+            <td>
+              <fieldset id="schools">
+                <input type="radio" name="CF-[:0.U_NOTIFICATIONS.U_NOTIFICATIONS:~[gpv:id;-1]]schoolid" id="schoolIdAll" value="0" checked>
+                <label for="schoolIdAll">~[text:psx.htmlc.admin_tech_notifications.edit.all_schools]</label>
+                <input type="radio" name="CF-[:0.U_NOTIFICATIONS.U_NOTIFICATIONS:~[gpv:id;-1]]schoolid" id="schoolIdCurrent" value="~(curschoolid)">
+                <label for="schoolIdCurrent">~[text:psx.htmlc.admin_tech_notifications.edit.current_school_only]
+                </label>
+              </fieldset>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="enabled">~[text:psx.htmlc.admin_tech_notifications.edit.enabled]</label>
+            </td>
+            <td>
+              <input type="checkbox" name="CF-[:0.U_NOTIFICATIONS.U_NOTIFICATIONS:~[gpv:id;-1]]enabled" id="enabled" value="0">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <div class="button-row">
+        ~[if.~[gpv:id]>0]
+        <input class="deleteCB hide" type="checkbox" name="DC-:0.U_NOTIFICATIONS.U_NOTIFICATIONS:~[gpv:id]"> [/if]
+        <input type="hidden" name="ac" value="prim">~[if.~[gpv:id]>0]
+        <a class="button" id="btnDelete">~[text:psx.htmlc.admin_tech_notifications.edit.delete]</a> [/if]
+        <a class="button" href="list.html">~[text:psx.htmlc.admin_tech_notifications.edit.cancel]</a>
+        <a class="button" id="submitButton">~[text:psx.htmlc.admin_tech_notifications.edit.submit]</a>
+      </div>
+    </div>
+    <br>~[wc:admin_footer_css]
+  </form>
+  <form id="deleteRecord" action="list.html" method="POST">
+  </form>
+  <script>
+    notifier.options = {
+      id: "~[gpv:id]"
+    };
+    notifier.loadEdit();
+    $j('#submitButton').click(function() {
+      $j('#_cb').remove();
+      $j('#notification').submit();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+#notification-alert {
+  width: 100%;
+  background-color: #f00;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.yes_no {
+  width: 40pt;
+}
+
+.school_name {
+  width: 120pt;
+}
+
+.list-date {
+  width: 55pt;
+}

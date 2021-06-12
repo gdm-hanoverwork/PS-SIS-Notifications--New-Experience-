@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Page</title>
+  <script src="modernizer.min.js"></script>
+  <link href="/images/css/screen.css" rel="stylesheet" media="screen">
+  <link href="/images/css/print.css" rel="stylesheet" media="print"> ~[wc:commonscripts]
+  <script src="spin.min.js"></script>
+  ~[wc:PearsonCPT]
+  <script>
+    pearsonCPT.cptInfo.push({
+      "Report Name": "Example Page",
+      "Version": "1.0.0",
+      "Created By": "David Pond",
+      "Last Modified By": "",
+      "Customization Number": "0123456",
+      "Developed for PowerSchool": "",
+      "Current PowerSchool Version": "~[displaypref:lastversionnumber]"
+    });
+  </script>
+</head>
+<body>
+  <article>
+    <!-- Insert Example Page Here -->
+  </article>
+  <script src="js/example.js"></script>
+  <script>
+    examplePage.postValues = {
+      id: "~[gpv:id]"
+    };
+    examplePage.displayPage();
+  </script>
+</body>
+</html>

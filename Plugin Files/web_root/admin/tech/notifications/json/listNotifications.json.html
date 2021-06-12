@@ -1,0 +1,55 @@
+[
+~[tlist_sql;
+  SELECT n.id
+  , n.message
+  , CASE
+  WHEN n.admin_portal = 1
+  THEN '~[text:psx.htmlc.admin_tech_notifications.list.yes]'
+  ELSE '~[text:psx.htmlc.admin_tech_notifications.list.no]'
+  END admin_portal
+  , CASE
+  WHEN n.teacher_portal = 1
+  THEN '~[text:psx.htmlc.admin_tech_notifications.list.yes]'
+  ELSE '~[text:psx.htmlc.admin_tech_notifications.list.no]'
+  END teacher_portal
+  , CASE
+  WHEN n.public_portal = 1
+  THEN '~[text:psx.htmlc.admin_tech_notifications.list.yes]'
+  ELSE '~[text:psx.htmlc.admin_tech_notifications.list.no]'
+  END public_portal
+  , CASE
+  WHEN n.sub_portal = 1
+  THEN '~[text:psx.htmlc.admin_tech_notifications.list.yes]'
+  ELSE '~[text:psx.htmlc.admin_tech_notifications.list.no]'
+  END sub_portal, CASE
+  WHEN n.schoolid = 0
+  THEN '~[text:psx.htmlc.admin_tech_notifications.list.allschools]'
+  ELSE s.name
+  END School
+  , n.start_date
+  , n.end_date
+  , CASE
+  WHEN n.enabled = 1
+  THEN '~[text:psx.htmlc.admin_tech_notifications.list.yes]'
+  ELSE '~[text:psx.htmlc.admin_tech_notifications.list.no]'
+  END enabled
+  FROM u_notifications n
+  LEFT JOIN schools s
+  ON n.schoolid = s.school_number
+  ORDER BY id
+]
+    {
+      "id": "~(n.id)",
+      "message": "~(n.message;js)",
+      "adminPortal": "~(admin_portal)",
+      "teacherPortal": "~(teacher_portal)",
+      "publicPortal": "~(public_portal)",
+      "subPortal": "~(sub_portal)",
+      "school": "~(school;js)",
+      "startDate": "~(start_date)",
+      "endDate": "~(end_date)",
+      "enabled": "~(enabled)"
+    },
+    [/tlist_sql]
+    {}
+]

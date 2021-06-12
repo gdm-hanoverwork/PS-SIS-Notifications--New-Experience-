@@ -1,0 +1,19 @@
+[
+  ~[tlist_sql;
+    SELECT message
+    FROM u_notifications
+    WHERE sub_portal = 1
+    AND enabled = 1
+    AND schoolid IN (0,~(curschoolid))
+    AND (to_date(start_date,'mm/dd/yyyy') <= sysdate
+      OR start_date IS NULL)
+    AND (to_date(end_date,'mm/dd/yyyy') >= sysdate
+      OR end_date IS NULL)
+    ORDER BY id
+  ]
+  {
+    "message": "~(message)"
+  },
+  [/tlist_sql]
+  {}
+]

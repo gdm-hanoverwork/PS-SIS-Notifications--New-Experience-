@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<!-- non framed -->
+<head>
+  <title>~[text:psx.htmlc.admin_tech_notifications.list.notifications]</title>
+  ~[wc:commonscripts]
+  <link href="/images/css/screen.css" rel="stylesheet" media="screen">
+  <link href="/images/css/print.css" rel="stylesheet" media="print">
+  <link href="/images/css/notifier.css" rel="stylesheet">
+</head>
+<body>
+  <form action="/admin/changesrecorded.white_nf.html" method="POST" id="notificationRecord">
+    ~[wc:admin_header_css]
+    <!-- breadcrumb start -->
+    <a href="/admin/home.html" target="_top">~[text:psx.htmlc.admin_tech_notifications.list.start_page]</a> &gt;
+    <a href="/admin/tech/home.html">~[text:psx.htmlc.admin_tech_notifications.list.system_administrator]</a> &gt; ~[text:psx.htmlc.admin_tech_notifications.list.notifications]
+    <!-- breadcrumb end -->
+    ~[wc:admin_navigation_css]
+    <h1>~[text:psx.htmlc.admin_tech_notifications.list.notifications]</h1>
+    <!-- start of content and bounding box -->
+    <div class="box-round">
+      <table class="linkDescList" id="notificationList">
+        <thead>
+          <tr>
+            <th>~[text:psx.htmlc.admin_tech_notifications.list.message]</th>
+            <th>~[text:psx.htmlc.admin_tech_notifications.list.admin]</th>
+            <th>~[text:psx.htmlc.admin_tech_notifications.list.teacher]</th>
+            <th>~[text:psx.htmlc.admin_tech_notifications.list.public]</th>
+            <th>~[text:psx.htmlc.admin_tech_notifications.list.subs]</th>
+            <th>~[text:psx.htmlc.admin_tech_notifications.list.schools]</th>
+            <th>~[text:psx.htmlc.admin_tech_notifications.list.startdate]</th>
+            <th>~[text:psx.htmlc.admin_tech_notifications.list.enddate]</th>
+            <th>~[text:psx.htmlc.admin_tech_notifications.list.enabled]</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <div class="button-row">
+        <input type="hidden" name="ac" value="prim" />
+        <a class="button" href="edit.html">~[text:psx.htmlc.admin_tech_notifications.list.add_notification]</a>
+      </div>
+    </div>
+    <br>
+    <!-- end of content of bounding box -->
+    ~[wc:admin_footer_css]
+  </form>
+  <script>
+    notifier.populateList();
+  </script>
+</body>
+</html>
+<!-- non framed -->

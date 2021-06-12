@@ -1,0 +1,25 @@
+{
+~[tlist_sql;
+    SELECT n.message
+    , n.admin_portal
+    , n.teacher_portal
+    , n.public_portal
+    , n.sub_portal
+    , n.enabled
+    , n.schoolid
+    , n.start_date
+    , n.end_date
+    FROM U_NOTIFICATIONS n
+    WHERE n.id = ~[gpv:id]
+    ]
+    "message": "~(n.message;js)",
+    "admin_portal": "~(n.admin_portal)",
+    "teacher_portal": "~(n.teacher_portal)",
+    "public_portal": "~(n.public_portal)",
+    "sub_portal": "~(n.sub_portal)",
+    "enabled": "~(n.enabled)",
+    "schools": "~(n.schoolid)",
+    "startdate": "~(n.start_date)",
+    "enddate": "~(n.end_date)"
+    [/tlist_sql]
+}

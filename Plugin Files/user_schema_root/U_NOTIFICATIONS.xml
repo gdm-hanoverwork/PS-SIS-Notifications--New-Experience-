@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<psExtension xmlns="http://www.powerschool.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.powerschool.com psextension.xsd">
+    <extensionname>U_NOTIFICATIONS</extensionname>
+    <extendedTable type="standalone" dbTableName="U_NOTIFICATIONS" childName="U_NOTIFICATIONS" comment="Notification Messages for the Notifications Plugin">
+        <field name="Message" type="String" length="400" comment="Notification Messages&#xA;"/>
+        <field name="Enabled" type="Integer" defaultValue="0" comment="The indicator to display whether the message is enabled or not."/>
+        <field name="SchoolID" type="Integer" comment="The School Number of the school the message will display at. 0 = all schools&#xA;"/>
+        <field name="Admin_Portal" type="Integer" defaultValue="0" comment="The indication as to whether the message will display in the admin portal."/>
+        <field name="Sub_Portal" type="Integer" defaultValue="0" comment="The indication as to whether the message will display in the substitute portal."/>
+        <field name="Teacher_Portal" type="Integer" defaultValue="0" comment="The indication as to whether the message will display in the teacher portal."/>
+        <field name="Public_Portal" type="Integer" defaultValue="0" comment="The indication as to whether the message will display in the public portal."/>
+        <field name="Start_Date" type="String" length="100" comment="The date the notification will start to display."/>
+        <field name="End_Date" type="String" length="100" comment="The date the notification will stop displaying."/>
+    </extendedTable>
+</psExtension>

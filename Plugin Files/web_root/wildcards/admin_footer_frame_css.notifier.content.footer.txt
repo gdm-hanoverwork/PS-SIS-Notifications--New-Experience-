@@ -1,0 +1,6 @@
+<!-- NOTIFICATIONS - ADMIN FOOTER FRAME CSS CONTENT FOOTER -->
+<link href="/images/css/notifier.css" rel="stylesheet">
+<script src="/scripts/notifier.js"></script>
+<script>
+  notifier.displayAdmin();
+</script>
