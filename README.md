@@ -1,5 +1,5 @@
 # PS-SIS-Notifications--New-Experience-
-Update to the Notifications Plugin on PowerSource Community Exchange, download ID 657, originally created by David Lee and David Pond
+Update to the Notifications Plugin on PowerSource Community Exchange, download ID 657, originally created by David Pond
 
 Important note from the original developer(s):
 IMPORTANT!!! 
